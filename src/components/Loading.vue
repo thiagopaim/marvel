@@ -1,0 +1,27 @@
+<template>
+  <div class="flex flex-col justify-center items-center">
+    <span
+      class="
+          flex
+          justify-center
+          items-center
+          w-14
+          h-14
+          mb-3
+          rounded-full
+        bg-gray-300
+        "
+    >
+      <i
+        class="
+        mdi
+        mdi-loading
+        text-4xl
+        text-gray-400
+        leading-none
+        animate-spin
+      "
+      />
+    </span>
+  </div>
+</template>

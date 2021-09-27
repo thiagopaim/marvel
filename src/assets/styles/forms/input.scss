@@ -1,0 +1,7 @@
+input {
+  min-height: 45px;
+
+  &:focus {
+    outline: none;
+  }
+}
