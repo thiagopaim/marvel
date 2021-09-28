@@ -12,7 +12,7 @@ const getters = {
 }
 
 const actions = {
-  async loginUser({ commit }, payload) {
+  async loginUser({ commit, dispatch }, payload) {
     commit('setIsLoading', true)
 
     await api
@@ -29,6 +29,9 @@ const actions = {
       })
       .then(() => commit('setIsLoading', false))
       .then(() => router.push('/'))
+      .catch(() => {
+        dispatch('showErrorMessage', 'Usuário ou senha inválidos')
+      })
       .finally(() => commit('setIsLoading', false))
   },
 
