@@ -3,7 +3,9 @@
 
 @import './forms/input.scss';
 
-@import './components/heroCard.scss';
-@import './components/heroFavorite.scss';
-@import './components/heroFeatured.scss';
-@import './components/heroSearch.scss';
+@import './components/layout/toaster.scss';
+
+@import './components/hero/heroCard.scss';
+@import './components/hero/heroFavorite.scss';
+@import './components/hero/heroFeatured.scss';
+@import './components/hero/heroSearch.scss';
