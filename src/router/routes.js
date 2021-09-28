@@ -2,6 +2,7 @@ import Login from '@/views/Login'
 import Home from '@/views/Home'
 import Hero from '@/views/Hero'
 import Profile from '@/views/Profile'
+import Error404 from '@/views/Error404'
 
 export const routes = [
   {
@@ -27,5 +28,14 @@ export const routes = [
     path: '/login',
     name: 'Login',
     component: Login,
+  },
+  {
+    path: '/404',
+    name: '404',
+    component: Error404,
+  },
+  {
+    path: '*',
+    redirect: '/404',
   },
 ]
