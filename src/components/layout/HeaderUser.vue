@@ -3,7 +3,7 @@
     <i
       class="mdi mdi-account-circle-outline text-5xl leading-none opacity-30"
     ></i>
-    <div class="ml-2 pl-3 border-l-2">
+    <div class="hidden sm:block ml-2 pl-3 border-l-2">
       <p class="leading-none text-gray-600 font-bold text-sm">
         {{ user.name }}
       </p>
