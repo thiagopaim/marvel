@@ -1,6 +1,6 @@
 <template>
-  <div class="heroSearch bg-gray-700 px-3 py-10">
-    <div class="heroSearch__wrapper" @focusout="handleClearField">
+  <div class="heroSearch bg-gray-700 px-3 py-10" @focusout="handleClearField">
+    <div class="heroSearch__wrapper">
       <input
         type="text"
         :class="
@@ -106,8 +106,10 @@ export default {
     },
 
     handleClearField() {
-      this.name = ''
-      this.setCharactersSearchResult([])
+      setTimeout(() => {
+        this.name = ''
+        this.setCharactersSearchResult([])
+      }, 500)
     },
 
     handleGoToFilteredPage() {
