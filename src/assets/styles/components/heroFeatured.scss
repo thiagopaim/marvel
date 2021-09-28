@@ -6,11 +6,19 @@
   height: 440px;
   background-color: #f4c630;
 
+  &:hover {
+    .heroFeatured__hero {
+      bottom: -40px;
+      transform: translate(-50%) scale(1.2);
+    }
+  }
+
   &__hero {
     position: absolute;
-    bottom: -80px;
+    bottom: -60px;
     left: 50%;
-    transform: translate(-50%);
+    transform: translate(-50%) scale(0.8);
+    transition: $transitionElastic;
   }
 
   &__title {
