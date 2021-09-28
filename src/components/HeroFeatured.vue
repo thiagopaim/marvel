@@ -1,10 +1,10 @@
 <template>
-  <div class="heroFeatured">
+  <router-link to="/hero/1009718" class="heroFeatured">
     <h1 class="heroFeatured__title">
       Wolverine
     </h1>
     <img :src="image" alt="Wolverine" class="heroFeatured__hero" />
-  </div>
+  </router-link>
 </template>
 
 <script>
