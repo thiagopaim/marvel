@@ -6,7 +6,7 @@
       bg-gray-200 
     "
   >
-    <Loading v-if="isLoading" />
+    <Loading class="pt-10" v-if="isLoading" />
 
     <ul
       v-else
@@ -45,7 +45,7 @@
 
     <HeroListEmpty v-if="!isLoading && characters.length <= 0" />
 
-    <Paginate :fetch="fetchCharacters" />
+    <Paginate v-if="totalPages > 1" :fetch="fetchCharacters" />
   </div>
 </template>
 
@@ -79,7 +79,7 @@ export default {
   },
 
   computed: {
-    ...mapGetters(['isLoading', 'characters']),
+    ...mapGetters(['isLoading', 'characters', 'totalPages']),
   },
 
   methods: {

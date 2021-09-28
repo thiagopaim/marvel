@@ -12,9 +12,18 @@ const router = new VueRouter({
 })
 
 router.beforeEach((to, from, next) => {
-  store.dispatch('cheskUserLogged')
+  store.dispatch('checkIsUserLogged')
+  store.commit('setIsLoading', false)
   store.commit('setCurrentPage', 1)
-  next()
+  store.commit('setOffsetPage', 0)
+  store.commit('setTotalPages', 1)
+
+  if (to.matched.some((record) => record.meta.login)) {
+    if (!localStorage['token']) next('/')
+    else next()
+  } else {
+    next()
+  }
 })
 
 export default router

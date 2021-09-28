@@ -5,7 +5,7 @@
 
     <ul v-if="characterComics.length >= 1" class="flex flex-wrap">
       <li
-        class="w-full xs:w-1/1 sm:w-1/2 md:w-1/2 lg:w-1/4 border-8 border-white"
+        class="w-full xs:w-1/1 sm:w-1/2 md:w-1/2 lg:w-1/4 border-8 border-white mb-5"
         v-for="item in characterComics"
         :key="item.id"
       >
@@ -21,7 +21,7 @@
     </p>
 
     <Paginate
-      v-if="characterComics.length >= 2"
+      v-if="totalPages > 1"
       :fetch="handlePaginateComics"
       :pageNumbers="false"
     />
@@ -47,7 +47,7 @@ export default {
   },
 
   computed: {
-    ...mapGetters(['isComponentLoading', 'characterComics']),
+    ...mapGetters(['isComponentLoading', 'characterComics', 'totalPages']),
   },
 
   methods: {

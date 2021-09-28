@@ -1,5 +1,5 @@
 <template>
-  <div class="flex items-center">
+  <router-link class="flex items-center" to="/profile">
     <i
       class="mdi mdi-account-circle-outline text-5xl leading-none opacity-30"
     ></i>
@@ -9,7 +9,7 @@
       </p>
       <small class="leading-none text-gray-500">{{ user.email }}</small>
     </div>
-  </div>
+  </router-link>
 </template>
 
 <script>

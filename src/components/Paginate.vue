@@ -122,7 +122,7 @@ export default {
   },
 
   computed: {
-    ...mapGetters(['currentPage', 'totalPages', 'offsetPage', 'itemsPerPage']),
+    ...mapGetters(['offsetPage', 'totalPages', 'currentPage', 'itemsPerPage']),
   },
 
   methods: {

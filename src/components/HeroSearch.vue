@@ -1,6 +1,6 @@
 <template>
   <div class="heroSearch bg-gray-700 px-3 py-10">
-    <div class="heroSearch__wrapper">
+    <div class="heroSearch__wrapper" @focusout="handleClearField">
       <input
         type="text"
         :class="
@@ -11,7 +11,8 @@
           `
         "
         placeholder="Procure pelo herói ou vilão"
-        @keyup="handleFilterByName"
+        @keydown="handleFilterByName"
+        @keyup.enter="handleGoToFilteredPage"
         v-model="name"
       />
 
@@ -77,7 +78,10 @@ export default {
   },
 
   methods: {
-    ...mapActions(['fetchCharactersFilteredByName']),
+    ...mapActions([
+      'fetchCharactersFilteredByName',
+      'fetchCharactersFilteredByNameEnterKey',
+    ]),
 
     ...mapMutations(['setCharactersSearchResult']),
 
@@ -99,6 +103,17 @@ export default {
             })
         }
       }, 500)
+    },
+
+    handleClearField() {
+      this.name = ''
+      this.setCharactersSearchResult([])
+    },
+
+    handleGoToFilteredPage() {
+      this.fetchCharactersFilteredByNameEnterKey(this.name).then(
+        () => (this.name = '')
+      )
     },
   },
 }

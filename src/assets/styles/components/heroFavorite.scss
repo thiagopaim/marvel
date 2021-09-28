@@ -1,0 +1,29 @@
+.heroFavorite {
+  &__unfavorite {
+    position: absolute;
+    width: 40px;
+    height: 45px;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    padding: 10px;
+    border-radius: 0 0 0 6px;
+    font-size: 1.45rem;
+    line-height: 100%;
+    background-color: rgba($lineColor, $alpha: 0.9);
+    cursor: pointer;
+
+    &:after {
+      position: absolute;
+      content: '\F0A7A';
+      font-family: 'Material Design Icons';
+    }
+
+    &.isLoading {
+      &:after {
+        content: '\F0772';
+        animation: rotating 1s linear infinite;
+      }
+    }
+  }
+}

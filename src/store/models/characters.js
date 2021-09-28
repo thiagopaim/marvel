@@ -66,6 +66,21 @@ const actions = {
     }
   },
 
+  async fetchCharactersFilteredByNameEnterKey({ commit }, name) {
+    try {
+      const {
+        data: { data },
+      } = await api.get(`characters?nameStartsWith=${name}`)
+      const { total, results } = await data
+
+      commit('setCharacters', results)
+      commit('setTotalPages', total)
+      commit('setCharactersSearchResult', [])
+    } catch (error) {
+      console.log(error)
+    }
+  },
+
   async fetchCharactersComics({ commit, rootState }, id) {
     commit('setIsComponentLoading', true)
     commit('setCharacterComics', [])

@@ -4,14 +4,11 @@ import router from '@/router'
 const state = {
   user: {},
   isLogged: false,
-  favorites: [],
-  isFavorite: false,
 }
 
 const getters = {
   user: (state) => state.user,
   isLogged: (state) => state.isLogged,
-  isFavorite: (state) => state.isFavorite,
 }
 
 const actions = {
@@ -34,7 +31,7 @@ const actions = {
       .then(() => router.push('/'))
   },
 
-  cheskUserLogged({ commit }) {
+  checkIsUserLogged({ commit }) {
     Promise.resolve(localStorage.getItem('token')).then((token) => {
       if (token) {
         commit('setIsLogged', true)
@@ -46,54 +43,9 @@ const actions = {
     })
   },
 
-  handleFavorite({ commit }, id) {
-    Promise.resolve(JSON.parse(localStorage.getItem('favorites'))).then(
-      (favorites) => {
-        if (favorites) {
-          const favoritesList = favorites
-          const isFavorite = favorites.find((item) => item === id)
-
-          !isFavorite && favoritesList.push(id)
-          localStorage.setItem('favorites', JSON.stringify(favoritesList))
-        } else {
-          const favoritesList = []
-          favoritesList.push(id)
-          localStorage.setItem('favorites', JSON.stringify(favoritesList))
-        }
-
-        commit('setIsFavorite', true)
-      }
-    )
-  },
-
-  handleUnfavorite({ commit }, id) {
-    Promise.resolve(JSON.parse(localStorage.getItem('favorites'))).then(
-      (favorites) => {
-        const favoritesList = favorites
-        const index = favoritesList.indexOf(id)
-        index > -1 && favoritesList.splice(index, 1)
-        localStorage.setItem('favorites', JSON.stringify(favoritesList))
-
-        commit('setIsFavorite', false)
-      }
-    )
-  },
-
-  checkFavorite({ commit }, id) {
-    commit('setIsFavorite', false)
-
-    Promise.resolve(JSON.parse(localStorage.getItem('favorites'))).then(
-      (favorites) => {
-        if (favorites) {
-          const isFavorite = favorites.find((item) => item === id)
-          isFavorite && commit('setIsFavorite', true)
-        }
-      }
-    )
-  },
-
   logoutUser() {
     localStorage.removeItem('token')
+    router.push('/')
   },
 }
 
@@ -104,10 +56,6 @@ const mutations = {
 
   setIsLogged: (state, status) => {
     state.isLogged = status
-  },
-
-  setIsFavorite: (state, hero) => {
-    state.isFavorite = hero
   },
 }
 

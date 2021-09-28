@@ -1,0 +1,44 @@
+.heroFeatured {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 440px;
+  background-color: #f4c630;
+
+  &__hero {
+    position: absolute;
+    bottom: -80px;
+    left: 50%;
+    transform: translate(-50%);
+  }
+
+  &__title {
+    font-size: 12rem;
+    font-weight: 900;
+    line-height: 100%;
+    text-align: center;
+    color: lighten($lineColor, 10);
+  }
+
+  @media screen and (max-width: 979px) {
+    &__title {
+      font-size: 8rem;
+    }
+  }
+
+  @media screen and (max-width: 747px) {
+    align-items: flex-start;
+    height: 380px;
+
+    &__hero {
+      max-width: 320px;
+      bottom: -60px;
+    }
+
+    &__title {
+      padding-top: 45px;
+      font-size: 3rem;
+    }
+  }
+}

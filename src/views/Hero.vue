@@ -26,7 +26,8 @@
             "
           >
             {{ character.name }}
-            <HeroFavorite :id="character.id" />
+
+            <HeroFavorite v-if="isLogged" :data="character" />
           </h1>
           <p class="text-lg" v-if="character.description">
             {{ character.description }}
@@ -63,7 +64,7 @@ export default {
   },
 
   computed: {
-    ...mapGetters(['character', 'isLoading']),
+    ...mapGetters(['character', 'isLoading', 'isLogged']),
   },
 
   methods: {

@@ -1,3 +1,9 @@
+@import './base/variables.scss';
+@import './base/animations.scss';
+
 @import './forms/input.scss';
 
+@import './components/heroCard.scss';
+@import './components/heroFavorite.scss';
+@import './components/heroFeatured.scss';
 @import './components/heroSearch.scss';

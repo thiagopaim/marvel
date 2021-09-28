@@ -15,6 +15,9 @@ const axiosInstance = axios.create({ baseURL: url })
 axiosInstance.interceptors.request.use(
   (config) => {
     config.params = defaultParams
+
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+
     return config
   },
   async ({ response }) => {

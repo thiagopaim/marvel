@@ -20,6 +20,7 @@ export const routes = [
     path: '/profile',
     name: 'Profile',
     component: Profile,
+    meta: { login: true },
   },
 
   {

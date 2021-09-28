@@ -1,5 +1,5 @@
 <template>
-  <router-link :to="`/hero/${hero.id}`">
+  <router-link :to="`/hero/${hero.id}`" class="heroCard">
     <div
       class="
         w-full
@@ -9,6 +9,7 @@
         border-b-2
         border-red-600
         overflow-hidden
+        heroCard__image
       "
     >
       <img

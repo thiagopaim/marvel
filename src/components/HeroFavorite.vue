@@ -12,8 +12,12 @@
     "
     title="Favorito"
   >
-    <i v-if="isFavorite" class="mdi mdi-star" @click="handleUnfavorite(id)"></i>
-    <i v-else class="mdi mdi-star-outline" @click="handleFavorite(id)"></i>
+    <i
+      v-if="isFavorite"
+      class="mdi mdi-star"
+      @click="handleUnfavorite(hero.id)"
+    ></i>
+    <i v-else class="mdi mdi-star-outline" @click="handleFavorite(hero)"></i>
   </div>
 </template>
 
@@ -24,9 +28,15 @@ export default {
   name: 'HeroFavorite',
 
   props: {
-    id: {
-      type: Number || String,
+    data: {
+      type: Object,
     },
+  },
+
+  data() {
+    return {
+      hero: null,
+    }
   },
 
   computed: {
@@ -38,7 +48,16 @@ export default {
   },
 
   mounted() {
-    this.checkFavorite(this.id)
+    this.checkFavorite(this.data.id)
+
+    this.hero = {
+      id: this.data.id,
+      name: this.data.name,
+      thumbnail: {
+        path: this.data.thumbnail.path,
+        extension: this.data.thumbnail.extension,
+      },
+    }
   },
 }
 </script>

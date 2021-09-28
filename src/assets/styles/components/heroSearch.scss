@@ -3,6 +3,7 @@
     position: relative;
     max-width: 520px;
     margin: 0 auto;
+    z-index: 2;
   }
 
   &__field {
@@ -12,10 +13,10 @@
     border-radius: 2px;
     border: 2px solid transparent;
     font-size: 1.2rem;
-    transition: all 0.3s ease-in-out;
+    transition: $transitionDefault;
 
     &:focus {
-      border-color: #fff;
+      border-color: $lineColor;
     }
 
     &.showResult {
@@ -29,7 +30,7 @@
     max-height: 280px;
     z-index: 2;
     overflow: auto;
-    border-top: 1px solid #ddd;
+    border-top: 1px solid $lineColor;
     border-radius: 0 0 12px 12px;
   }
 
@@ -49,10 +50,10 @@
     align-items: center;
     gap: 15px;
     border-radius: 6px;
-    transition: all 0.3s ease-in-out;
+    transition: $transitionElastic;
 
     &:hover {
-      background-color: #ddd;
+      background-color: $lineColor;
 
       .heroSearch {
         &__thumb {
@@ -68,7 +69,7 @@
     height: 50px;
     border-radius: 50%;
     overflow: hidden;
-    transition: all 0.3s cubic-bezier(0.75, -0.5, 0, 1.75);
+    transition: $transitionElastic;
 
     img {
       position: absolute;
