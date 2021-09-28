@@ -57,7 +57,7 @@
 </template>
 
 <script>
-import HeroCard from '@/components/HeroCard'
+import HeroCard from '@/components/hero/HeroCard'
 import router from '@/router'
 import { mapActions } from 'vuex'
 

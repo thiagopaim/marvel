@@ -38,7 +38,7 @@
 </template>
 
 <script>
-import UserFavorites from '@/components/UserFavorites'
+import UserFavorites from '@/components/user/UserFavorites'
 import { mapActions, mapGetters } from 'vuex'
 export default {
   name: 'Profile',

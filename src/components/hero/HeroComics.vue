@@ -29,8 +29,8 @@
 </template>
 
 <script>
-import Paginate from '@/components/Paginate'
-import Loading from '@/components/Loading'
+import Paginate from '@/components/layout/Paginate'
+import Loading from '@/components/layout/Loading'
 import { mapActions, mapGetters } from 'vuex'
 export default {
   name: 'HeroComics',

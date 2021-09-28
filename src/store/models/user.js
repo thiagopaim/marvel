@@ -29,6 +29,7 @@ const actions = {
       })
       .then(() => commit('setIsLoading', false))
       .then(() => router.push('/'))
+      .finally(() => commit('setIsLoading', false))
   },
 
   checkIsUserLogged({ commit }) {

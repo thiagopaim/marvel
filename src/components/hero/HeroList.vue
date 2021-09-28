@@ -50,10 +50,10 @@
 </template>
 
 <script>
-import HeroCard from '@/components/HeroCard'
-import Paginate from '@/components/Paginate'
-import Loading from '@/components/Loading'
-import HeroListEmpty from '@/components/HeroListEmpty'
+import HeroCard from '@/components/hero/HeroCard'
+import Paginate from '@/components/layout/Paginate'
+import Loading from '@/components/layout/Loading'
+import HeroListEmpty from '@/components/hero/HeroListEmpty'
 import { mapGetters, mapActions } from 'vuex'
 
 export default {

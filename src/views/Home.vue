@@ -7,9 +7,9 @@
 </template>
 
 <script>
-import HeroFeatured from '@/components/HeroFeatured'
-import HeroSearch from '@/components/HeroSearch'
-import HeroList from '@/components/HeroList'
+import HeroFeatured from '@/components/hero/HeroFeatured'
+import HeroSearch from '@/components/hero/HeroSearch'
+import HeroList from '@/components/hero/HeroList'
 import { mapActions } from 'vuex'
 
 export default {

@@ -43,9 +43,9 @@
 </template>
 
 <script>
-import Loading from '@/components/Loading'
-import HeroComics from '@/components/HeroComics'
-import HeroFavorite from '@/components/HeroFavorite'
+import Loading from '@/components/layout/Loading'
+import HeroComics from '@/components/hero/HeroComics'
+import HeroFavorite from '@/components/hero/HeroFavorite'
 import { mapGetters, mapActions } from 'vuex'
 
 export default {
